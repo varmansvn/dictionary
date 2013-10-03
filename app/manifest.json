@@ -1,0 +1,11 @@
+{
+  "name": "Khmer Dictionary",
+  "description": "Just another khmer dictionary",
+  "version": "0.0.0.1",
+  "manifest_version": 2,
+  "app": {
+    "launch": {
+      "local_path": "index.html"
+    }
+  }
+}

@@ -6,10 +6,14 @@ angular.module('dictionaryApp')
   	Wordservice.getCount().success(function(count) {
        	$scope.count = count;
    	});
-  		
-  	Wordservice.getRandomWord().success(function(word) {
-  		$scope.word = word[0];
-  	});
+   	  	
+  	$scope.search = function(query) {
+  		if(!query) {
+  			return;  		
+  		}  		
+  		Wordservice.search(query, 10).success(function(words) {
+  			$scope.words = words;
+  		});  	
+  	}
 
-  	//$scope.count = "hello";
   });

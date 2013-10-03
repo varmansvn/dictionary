@@ -1,21 +1,22 @@
 <div class="jumbotron">
 
 <div class="row">
+  <h3>វចនានុក្រមខ្មែរ</h3>
   <form class="form-search">    
     <div class="input-prepend">
       <button type="submit" class="btn btn-primary">Search</button>
-      <input type="text" class="span3 search-query">
+      <input type="text" class="span3 search-query" ng-change="search(query)" ng-model="query"​​​ id="search-word">
     </div>
   </form>  
-  <quote>word count: {{count}}</quote>
+  <p class="pull-right">word count: {{count}}</p>  
 </div>
-
 <hr>
-
 <div class="row​">
-  	<div class="span6 text-left">
-  		<h5>{{word.title}}</h5>
-  		<div ng-bind-html-unsafe="word.definition"></div>
+  	<div class="text-left" ng-repeat="word in words | filter:query">
+      <dl>
+  		  <dt><font color="red"><b>{{word.title}}</b></font></dt>
+  		  <dd ng-bind-html-unsafe="word.definition"></dd>
+      <dl>
 	</div>
 </div>
 
