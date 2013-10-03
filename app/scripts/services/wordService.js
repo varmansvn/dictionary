@@ -7,11 +7,7 @@ angular.module('dictionaryApp')
     	getCount: function() {
     		var url = 'https://api.mongolab.com/api/1/databases/dictionary/collections/word?c=true&apiKey=_WM-TPsVMEUenxiu9GGh91V_Y2_hYlpu';
     		return $http.get(url);
-    	},
-    	getRandomWord: function() {    	
-    		var url = 'https://api.mongolab.com/api/1/databases/dictionary/collections/word?sk=100&l=1&fo=true&apiKey=_WM-TPsVMEUenxiu9GGh91V_Y2_hYlpu';
-    		return $http.get(url);
-    	},
+    	},    	
     	search: function(query, size) {    		
     		var url = 'https://api.mongolab.com/api/1/databases/dictionary/collections/word?q={"title":{"$regex":"^'
     			+query+'","$options":"i"}}&l='+size+'&apiKey=_WM-TPsVMEUenxiu9GGh91V_Y2_hYlpu';
