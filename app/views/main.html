@@ -1,14 +1,22 @@
 <div class="jumbotron">
 
 <div class="row">
-  <h3>វចនានុក្រមខ្មែរ</h3>
+  <div class="pull-right">
+
+    <a ng-click="changeLanguage('km')" href="#">{{ 'KHMER' | translate }}</a> |
+    <a ng-click="changeLanguage('en')" href="#">{{ 'ENGLISH' | translate }}</a>
+
+  </div>
+</div>
+<div class="row">
+  <h3>{{ 'TITLE' | translate }}</h3>
   <form class="form-search">    
     <div class="input-prepend">
-      <button type="submit" class="btn btn-primary">Search</button>
+      <button type="submit" class="btn btn-primary">{{ 'SEARCH' | translate }}</button>
       <input type="text" class="span3 search-query" ng-change="search(query)" ng-model="query"​​​ id="search-word">
     </div>
   </form>  
-  <p class="pull-right">word count: {{count}}</p>  
+  <p class="pull-right">{{ 'COUNT' | translate }}: {{count}}</p>  
 </div>
 <hr>
 <div class="row​">

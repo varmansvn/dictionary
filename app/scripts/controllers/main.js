@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('dictionaryApp')
-  .controller('MainCtrl', function ($scope, Wordservice) {
+  .controller('MainCtrl', function ($scope, $translate, Wordservice) {
   	
+    $scope.changeLanguage = function(langKey) {
+      $translate.uses(langKey);
+    };
+
   	Wordservice.getCount().success(function(count) {
        	$scope.count = count;
    	});
