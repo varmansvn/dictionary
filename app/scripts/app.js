@@ -1,6 +1,9 @@
 'use strict';
 
 angular.module('dictionaryApp', ['pascalprecht.translate'])
+  .config(function ($locationProvider) {
+    $locationProvider.html5Mode(true);
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -10,10 +13,7 @@ angular.module('dictionaryApp', ['pascalprecht.translate'])
       .otherwise({
         redirectTo: '/'
       });
-  })
-  .config(function ($locationProvider) {
-    $locationProvider.html5Mode(true);
-  })
+  })  
   .config(['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('en', {
       'KHMER': 'Khmer',
@@ -22,14 +22,12 @@ angular.module('dictionaryApp', ['pascalprecht.translate'])
       'SEARCH': 'Search',
       'COUNT': 'Word Count'
     });
- 
     $translateProvider.translations('km', {
       'KHMER': 'ភាសាខ្មែរ',
       'ENGLISH': 'ភាសាអង់គ្លេស',
       'TITLE': 'វចនានុក្រមខ្មែរ',
       'SEARCH': 'ស្វែងរក',
       'COUNT': 'ចំនួនពាក្យសរុប'
-    });
- 
-    $translateProvider.preferredLanguage('en');
+    }); 
+    $translateProvider.preferredLanguage('km');
   }]);
